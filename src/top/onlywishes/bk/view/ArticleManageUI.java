@@ -240,26 +240,22 @@ public class ArticleManageUI extends JPanel {
 				articleTitle = txtArticleName.getText();
 				articleID = text_ArticleID.getText();
 				System.out.println(articleID);
+				if (Objects.equals(articleID, "")) {
+					RemainUI ui = new  RemainUI("提示","输入文章ID为空！");
+					ui.setVisible(true);
+					return;
+				}
 				art_id = Integer.parseInt(articleID);  // 根据这个修改文章
-//
-//				if("".equals(art_id) && Tables.getSelectedRow() < 0) {
-//					RemainUI ru=new RemainUI();
-//					ru.setVisible(true);
-//					RemainUI ui = new  RemainUI("提示","请输入文章ID或双击文章！");
-//					System.out.println("当前输入ID为空，不执行操作");
-//					return;
-//				}
 
 				// 如果输入框是空，并且没有选中表格中的任何一行，则结束方法
 				if("".equals(articleID)  && Tables.getSelectedRow() < 0) {
 //					RemainUI ru=new RemainUI();
 //					ru.setVisible(true);
-					RemainUI ui = new  RemainUI("提示","请输入文章ID或双击文章！");
+					RemainUI ui = new  RemainUI("提示","请输入文章ID进行修改！");
 					ui.setVisible(true);
 					System.out.println("当前输入ID为空，不执行操作");
 					return;
 				}
-
 
 				loginUI lo = new loginUI();
 				ArticleDao bs = new ArticleDao();
@@ -312,7 +308,6 @@ public class ArticleManageUI extends JPanel {
 						RemainUI ui = new  RemainUI("提示","您输入的文章ID不存在！");
 						ui.setVisible(true);
 					}
-
 				}
 /*
 				// 如果输入框有值,通过标题进行回显,如果书名输入框没有值，提示
@@ -322,7 +317,6 @@ public class ArticleManageUI extends JPanel {
 				}
 */
 			}
-
 		});
 		//按钮颜色
 		btnAlter.addMouseListener(new MouseAdapter() {
