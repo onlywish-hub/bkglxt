@@ -5,7 +5,7 @@
 
 #### 软件架构
 软件架构说明
-![输入图片说明](src/top/picture/%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.png)
+![输入图片说明](src/top/picture/structure.png)
 
 
 
