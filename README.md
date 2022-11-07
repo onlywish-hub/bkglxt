@@ -18,9 +18,9 @@
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  确定数据库导入完毕后，运行主程序loginMainUI 若有乱码情况，修改idea编码为utf-8
+2.  说明：本博客管理系统是作为课设使用的，使用了大量的javaGUI来构造页面，相信会对初学Java要做课设的伙伴有帮助的。改博客管理系统实现的功能有：用户注册、用户登录、写文章、修改文章、删除文章、修改用户信息、添加用户、删除用户等主要功能。其中管理员具有用户管理功能，所有用户都可查看该博客系统的所有的文章，双击左键可查看文章，右键可删除文章，非管理员用户只能删除自己的文章。
+3.  注：本博客管理系统由于当初课设时间较短，许多功能还不太完善，在后来将会进行相应完善，欢迎大家指正。
 
 #### 参与贡献
 
@@ -32,9 +32,4 @@
 
 #### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
