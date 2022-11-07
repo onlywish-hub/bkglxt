@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6822869b-db94-415f-9577-49c31ffae1b5" name="变更" comment="上传图片">
+    <list default="true" id="6822869b-db94-415f-9577-49c31ffae1b5" name="变更" comment="删除功能完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top/onlywishes/bk/view/ArticleManageUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/onlywishes/bk/view/ArticleManageUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +77,7 @@
       <workItem from="1667658126020" duration="1599000" />
       <workItem from="1667666476345" duration="5360000" />
       <workItem from="1667746044288" duration="261000" />
+      <workItem from="1667800070917" duration="501000" />
     </task>
     <task id="LOCAL-00001" summary="java课设">
       <created>1667658200825</created>
@@ -111,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667669354133</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="删除功能完善">
+      <created>1667800264064</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667800264064</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +135,7 @@
     <MESSAGE value="java课设" />
     <MESSAGE value="修改文章bug解决" />
     <MESSAGE value="上传图片" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传图片" />
+    <MESSAGE value="删除功能完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除功能完善" />
   </component>
 </project>

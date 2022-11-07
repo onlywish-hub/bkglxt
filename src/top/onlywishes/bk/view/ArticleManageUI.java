@@ -206,7 +206,6 @@ public class ArticleManageUI extends JPanel {
 				btnDelete.setBackground(new Color(255, 140, 0));
 				btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			}
-
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnDelete.setBackground(new Color(255, 160, 122));
