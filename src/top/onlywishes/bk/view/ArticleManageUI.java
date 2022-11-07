@@ -2,9 +2,7 @@ package top.onlywishes.bk.view;
 
 import javax.swing.JPanel;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -120,6 +118,9 @@ public class ArticleManageUI extends JPanel {
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ArticleDao bs = null;
+				loginUI loginUser = new loginUI();
+				String user = loginUser.Username;
+
 				int results = 0;// 删除结果返回值
 				// 首先获得输入框中的信息
 				articleTitle = txtArticleName.getText();//
@@ -135,8 +136,12 @@ public class ArticleManageUI extends JPanel {
 					// 对用户输入的书籍进行判断
 					bs = new ArticleDao();
 					Article article = null;
+					int baseID = 0;
 					try {
 						article = bs.getArticlesByArticleTital(articleTitle);
+						AdminDao ad = new AdminDao();
+						Admin baseU = ad.getAdminByNM(user);
+						baseID = baseU.getA_id();
 					} catch (ClassNotFoundException e2) {
 						// TODO Auto-generated catch block
 						e2.printStackTrace();
@@ -147,34 +152,51 @@ public class ArticleManageUI extends JPanel {
 					if (article == null) {
 						JOptionPane.showMessageDialog(null, "您需要删除的书籍不存在！");
 						return;
-					} else {
-						int option = JOptionPane.showConfirmDialog(null, "你确定删除《" + articleTitle + "》吗？", "删除提示",
-								JOptionPane.YES_NO_OPTION);
-						if (option == JOptionPane.YES_OPTION) {
-							results = bs.deleteArticle(articleTitle);
-						}
+					} else if (article.getArticle_author_id() != baseID) {
+						JOptionPane.showMessageDialog(null, "您不能删除他人的文章哦！");
+						return;
+					} else
+						try {
+							if (bs.getArticlesByArticleTital_MOHU(articleTitle).size()>1) {
+								JOptionPane.showMessageDialog(null, "存在多个同名文章，请右键选择删除！");
+								return;
+							}else {
+								int option = JOptionPane.showConfirmDialog(null, "你确定删除《" + articleTitle + "》吗？", "删除提示",
+										JOptionPane.YES_NO_OPTION);
+								if (option == JOptionPane.YES_OPTION) {
+									results = bs.deleteArticle(articleTitle);
+								}
 
-						if (results > 0) {
-							txtArticleName.setText("");
+								if (results > 0) {
+									txtArticleName.setText("");
 
-							JOptionPane.showMessageDialog(null, "删除成功");
-							Tables.setModel(new DefaultTableModel());// 设置空的表格模型
-							try {
-								atl = new ArticleTableModel(bs.getAll());
-							} catch (ClassNotFoundException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							} catch (SQLException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}// 调用dao类中的查询所有数据的方法进行查询
-							Tables.setModel(atl);// 将查询到的结果设置为表格模型
+									JOptionPane.showMessageDialog(null, "删除成功");
+									Tables.setModel(new DefaultTableModel());// 设置空的表格模型
+									try {
+										atl = new ArticleTableModel(bs.getAll());
+									} catch (ClassNotFoundException e1) {
+										// TODO Auto-generated catch block
+										e1.printStackTrace();
+									} catch (SQLException e1) {
+										// TODO Auto-generated catch block
+										e1.printStackTrace();
+									}// 调用dao类中的查询所有数据的方法进行查询
+									Tables.setModel(atl);// 将查询到的结果设置为表格模型
+								}
+							}
+						} catch (HeadlessException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						} catch (ClassNotFoundException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
 						}
-					}
 				}
 			}
 		});
-
 
 
 		//设置按钮颜色
@@ -539,44 +561,66 @@ public class ArticleManageUI extends JPanel {
 			ubu.setVisible(true);
 		}
 
-		// 鼠标右键删除操作
-		public void btnDelete() {
-			int results=0;//受删除的语句行
-			// 获得鼠标双击的表格行
-			// getSelectedRow()返回第一个选定行的索引，如果没有选择行，则返回-1。
-			int rowIndex = Tables.getSelectedRow();
-			System.out.println(rowIndex);
-			if (rowIndex < 0) {// 没有选中表格行
-				return;// 结束方法
-			}
-			// 获得表格模型
-			ArticleTableModel atm = (ArticleTableModel) Tables.getModel();
-			// 获得选中行标题
-			String articleTitle = atm.getValueAt(rowIndex, 3).toString();
-			// 通过标题名称进行删除操作
-			ArticleDao bs=new ArticleDao();
-			int option = JOptionPane.showConfirmDialog(null, "你确定删除《" + articleTitle + "》吗？", "删除提示",
-					JOptionPane.YES_NO_OPTION);
-			if (option == JOptionPane.YES_OPTION) {
-				results=bs.deleteArticle(articleTitle);
-			}
-			if(results>0) {//删除成功
-				JOptionPane.showMessageDialog(null, "删除成功");
-				//将删除之后的书籍显示在表格控件中
-				Tables.setModel(new DefaultTableModel());// 设置空的表格模型
-				try {
-					atl = new ArticleTableModel(bs.getAll());
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}// 调用service类中的查询所有数据的方法进行查询
-				Tables.setModel(atl);// 将查询到的结果设置为表格模型
-			}
-
+	// 鼠标右键删除操作
+	public void btnDelete() {
+		int results=0;//受删除的语句行
+		// 获得鼠标双击的表格行
+		// getSelectedRow()返回第一个选定行的索引，如果没有选择行，则返回-1。
+		int rowIndex = Tables.getSelectedRow();
+		System.out.println(rowIndex);
+		if (rowIndex < 0) {// 没有选中表格行
+			return;// 结束方法
 		}
+		// 获得表格模型
+		ArticleTableModel atm = (ArticleTableModel) Tables.getModel();
+		// 获得选中行标题
+		String articleTitle = atm.getValueAt(rowIndex, 3).toString();
+		// 通过标题名称进行删除操作
+		loginUI loginUser = new loginUI();
+		String user = loginUser.Username;
+		ArticleDao bs=new ArticleDao();
+		AdminDao ad = new AdminDao();
+		Admin baseU = null;
+		Article article = null;
+		int baseID = 0;
+		try {
+			article = bs.getArticlesByArticleTital(articleTitle);
+			baseU = ad.getAdminByNM(user);
+			baseID = baseU.getA_id();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		if (article.getArticle_author_id() != baseID && baseID != 1) {
+			JOptionPane.showMessageDialog(null,"您不能删除别人的文章哦！");
+			return;
+		}
+
+		int option = JOptionPane.showConfirmDialog(null, "你确定删除文章《" + articleTitle + "》吗？", "删除提示",
+				JOptionPane.YES_NO_OPTION);
+		if (option == JOptionPane.YES_OPTION) {
+			results=bs.deleteArticle(articleTitle);
+		}
+		if(results>0) {//删除成功
+			JOptionPane.showMessageDialog(null, "删除成功");
+			//将删除之后的书籍显示在表格控件中
+			Tables.setModel(new DefaultTableModel());// 设置空的表格模型
+			try {
+				atl = new ArticleTableModel(bs.getAll());
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}// 调用service类中的查询所有数据的方法进行查询
+			Tables.setModel(atl);// 将查询到的结果设置为表格模型
+		}
+
+	}
 
 		// 用于判断输入的是否是数字
 		public static boolean isNumeric(String str) {

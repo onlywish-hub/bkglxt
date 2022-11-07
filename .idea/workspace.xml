@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6822869b-db94-415f-9577-49c31ffae1b5" name="变更" comment="修改文章bug解决">
+    <list default="true" id="6822869b-db94-415f-9577-49c31ffae1b5" name="变更" comment="上传图片">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/top/onlywishes/bk/view/ArticleManageUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +42,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/top/picture" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="项目" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\桌面\java课设\博客管理系统\src\top\picture" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="loginMainUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -57,11 +69,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="应用程序.loginMainUI" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +80,8 @@
       <updated>1667621748098</updated>
       <workItem from="1667621749314" duration="11252000" />
       <workItem from="1667658126020" duration="1599000" />
-      <workItem from="1667666476345" duration="2624000" />
+      <workItem from="1667666476345" duration="5360000" />
+      <workItem from="1667746044288" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="java课设">
       <created>1667658200825</created>
@@ -96,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667667840251</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="上传图片">
+      <created>1667669354133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667669354133</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="java课设" />
     <MESSAGE value="修改文章bug解决" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改文章bug解决" />
+    <MESSAGE value="上传图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传图片" />
   </component>
 </project>
